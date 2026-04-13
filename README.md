@@ -1,74 +1,34 @@
-# React + TypeScript + Vite
+Task Untuk Test Kandidat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Buat website "TCG Auction" ( i.e Pokemon Card, Sports Card ) simple
 
-Currently, two official plugins are available:
+Tech Stack
+Framework: Vite + React
+Database: Convex ( Harus pake Component Sharded Counter )
+Lang: TS Only
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Page 1 ( Auction Item List ):
+Auction list yang berisi list auction kasi aja 3 dummy auction items
+Untuk pagenya harus ada: 
+* Foto Items
+* Items Name
+* Current Highest
+* Total Number of Bids
+* Countdown Timer ( Buat nunjukin sisa waktu dari action item tersebut )
 
-## React Compiler
+Page 2 ( Items Auction Page ):
+Di page ke 2 kalian pake nama atau auction id untuk di urlnya ( i.e /auction/928833941 atau /auction/1998-pikachu-illustrator )
+Untuk pagenya harus ada:
+* Foto Item
+* Start Bid Price
+* Owner Name ( dummy aja gpp )
+* Input Bids Price ( Harus di atas current highest bid, kalo bisa add button +50.000 +100.000 )
+* Live View ( total user yang liat pagenya * )
+* Bid History ( user_name ( generate aja random gpp per browser / user simple aja di local storage buat namanya ), bid price, time history HH:MM:SS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# tcg-auctions
+NB: 
+* Foto item bisa placeholder aja atau foto random
+* Live View ngga harus realtime juga buat tambahan di ui aja, cuman kalo bisa silahkan
+* Diperbolehkan pake AI yang penting uinya clean dan sebisa mungkin tidak terlalu keliatan AI banget
+* WARNING: JANGAN ADA GRADIENT YANG TERLALU MENCOLOK DI BG / CARD / BUTTON
+* Untuk waktu pengerjaan secepatnya tanpa membuat hasilnya kurang bagus
