@@ -54,12 +54,14 @@ export const seedAuctions = mutation({
   handler: async (ctx) => {
     const now = Date.now();
 
+    const ONE_DAY = 24 * 60 * 60 * 1000;
+
     await ctx.db.insert("auctions", {
       title: "Pikachu Illustrator 1998",
       image: "https://picsum.photos/300",
       startPrice: 1000000,
       currentPrice: 1000000,
-      endTime: now + 3600000,
+      endTime: now + ONE_DAY,
       owner: "Ash",
     });
 
@@ -68,7 +70,7 @@ export const seedAuctions = mutation({
       image: "https://picsum.photos/301",
       startPrice: 500000,
       currentPrice: 500000,
-      endTime: now + 1800000,
+      endTime: now + ONE_DAY,
       owner: "Red",
     });
 
@@ -77,7 +79,7 @@ export const seedAuctions = mutation({
       image: "https://picsum.photos/302",
       startPrice: 2000000,
       currentPrice: 2000000,
-      endTime: now + 5400000,
+      endTime: now + ONE_DAY,
       owner: "NBA Collector",
     });
   },
